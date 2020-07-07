@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPane" id="AnchorPane" prefHeight="650.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PhoneBook.PhoneBookViewController">
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="14.0" minHeight="16" minWidth="69" prefHeight="29.0" prefWidth="172.0" text="PHONE BOOK" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <SplitPane fx:id="mainSplit" dividerPositions="0.2" layoutY="55.0" prefHeight="595.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <StackPane fx:id="menuPane" layoutX="14.0" layoutY="90.0" prefHeight="593.0" prefWidth="139.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Pane fx:id="exportPane" prefHeight="593.0" prefWidth="453.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="118.0" layoutY="54.0" prefHeight="35.0" prefWidth="274.0" text="Export contacts to PDF">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="229.0" layoutY="137.0" text="Filename:" />
+                        <TextField fx:id="fileName" layoutX="107.0" layoutY="160.0" prefHeight="25.0" prefWidth="295.0" promptText="Type your filename here" style="-fx-border-color: grey;" />
+                        <Button layoutX="205.0" layoutY="230.0" mnemonicParsing="false" onAction="#generatePDF" prefHeight="25.0" prefWidth="98.0" text="Save as PDF" />
+                     </children></Pane>
+                  <Pane fx:id="contactPane" prefHeight="593.0" prefWidth="453.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="table" editable="true" prefHeight="453.0" prefWidth="508.0">
+                          <placeholder>
+                              <Label text="No data." />
+                          </placeholder>
+                          <columns>
+                          </columns>
+                        </TableView>
+                        <VBox layoutX="112.0" layoutY="464.0" spacing="20.0">
+                           <children>
+                              <TextField fx:id="inputFirstName" layoutX="14.0" layoutY="466.0" prefHeight="27.0" prefWidth="190.0" promptText="Anita" style="-fx-border-color: grey;" />
+                              <TextField fx:id="inputLastName" layoutX="14.0" layoutY="507.0" promptText="Kovács" style="-fx-border-color: grey;" />
+                              <TextField fx:id="inputEmail" layoutX="14.0" layoutY="544.0" promptText="nitta87@gmail.com" style="-fx-border-color: grey;" />
+                           </children>
+                        </VBox>
+                        <Label alignment="CENTER_RIGHT" layoutX="8.0" layoutY="469.0" prefHeight="17.0" prefWidth="98.0" text="First Name:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="8.0" layoutY="516.0" prefHeight="17.0" prefWidth="98.0" text="Last Name:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="8.0" layoutY="564.0" prefHeight="17.0" prefWidth="98.0" text="E-mail:" />
+                        <Button layoutX="321.0" layoutY="511.0" mnemonicParsing="false" onAction="#addNewContact" prefHeight="25.0" prefWidth="139.0" text="Add New Contact" />
+                     </children>
+                  </Pane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+    </children>
+</AnchorPane>
